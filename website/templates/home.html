@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Accueil{% endblock %} <!-- base.html = Notre template + title c'est le titre dans l'onglet-->
+{% block content %}
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes" >
+    {% for note in user.notes %}
+    <li class="list-group-item">
+        {{ note.data }}
+        <span aria-hidden="true"></span>
+        <div class="row">
+            <div class="col-10"> 
+                <h5>{{ note.title }}</h5> 
+                <p>{{ note.content }}</p> 
+            </div>
+            <div class="col-2">
+                <a href="" class="btn btn-danger">Supprimer</a>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<form method="POST">
+    <textarea name ="note" id="note" class="form-control"></textarea>
+    <div align="'center">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </div>
+</form>
+{% endblock %}

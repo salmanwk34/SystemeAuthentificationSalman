@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Connexion{% endblock %} <!-- base.html = Notre template + title c'est le titre dans l'onglet-->
+
+{% block content %}
+
+<form method="POST"> <!-- Formulaire d'inscription -->
+    <h3 align="center">Connexion </h3> <!-- Titre --> 
+
+    <div class="form-group">   <!-- Formulaire -->
+        <label for="email">Adresse mail</label> <!-- Email -->
+            <input
+                type="email" 
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Entrez votre Adresse mail"/> <!-- Input --> 
+    </div>
+    
+    <div class="form-group"> <!-- Formulaire -->
+        <label for="lastName">Mot de passe</label> <!-- Nom -->
+            <input 
+                type="password" 
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Entrez votre Mot de Passe"/> <!-- Input -->
+    </div>
+
+    <br> <!-- Saut de ligne -->
+    <button type="submit" class="btn btn-primary">Se connecter</button> <!-- Bouton -->
+
+    </form>
+
+    
+    
+
+{% endblock %}
